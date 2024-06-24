@@ -24,3 +24,88 @@ function setup() {
 createCanvas(600, 400); trilha.loop();
 
 }
+function draw() {
+
+background(0);
+
+mostraBolinha();
+
+movimentaBolinha();
+
+verificaColisaoBorda();
+
+mostraRaquete (xRaquete, yRaquete);
+
+movimentaMinhaRaquete();
+
+//verificaColisaoRaquete();
+
+verificaColisaoRaquete (xRaquete, yRaquete);
+
+mostraRaquete (xRaqueteOponente, yRaqueteOponente);
+
+movimentaRaqueteOponente();
+
+verificaColisaoRaquete (xRaqueteOponente,
+
+yRaqueteOponente);
+
+incluiPlacar();
+
+marcarPonto();
+
+}
+
+function mostraBolinha() {
+
+circle(xBolinha, yBolinha, diametro);
+
+}
+
+function movimentaBolinha() {
+
+xBolinha + velocidadeXBolinha;
+
+yBolinha += velocidadeYBolinha;
+
+}
+
+function verificaColisaoBorda() {
+
+if (xBolinha + raio > width || xBolinha -
+
+raio < 0) {
+
+velocidadeXBolinha = -1;
+
+} if (yBolinha + raio > height || yBolinha
+
+raio < 0) {
+
+velocidadeYBolinha *= -1;
+
+}
+
+}
+
+function mostraRaquete (x,y) {
+
+rect(x, y, raqueteComprimento, raqueteAltura);
+
+}
+
+if (keyIsDown(UP_ARROW)) {
+
+function movimentaMinhaRaquete() {
+
+yRaquete 10;
+
+}
+
+if (keyIsDown(DOWN_ARROW)) {
+
+yRaquete += 10;
+
+}
+
+}
